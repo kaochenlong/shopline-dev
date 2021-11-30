@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  shop:
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/projects/myshopline
+    depends_on:
+      - redis
+  redis:
+    image: redis
