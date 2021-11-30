@@ -9,5 +9,17 @@ services:
       - .:/projects/myshopline
     depends_on:
       - redis
+      - bananadb
+    links:
+      - bananadb
   redis:
     image: redis
+  bananadb:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+
+volumes:
+  mongodb:

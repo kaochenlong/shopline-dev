@@ -1,0 +1,8 @@
+<h1><%= @product.title %></h1>
+
+<h2>Items</h2>
+<ul>
+<% @items.each do |item| %>
+  <li><%= item.title %> (sku: <%= item.sku %>)</li>
+<% end %>
+</ul>
