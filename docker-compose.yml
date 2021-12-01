@@ -10,8 +10,10 @@ services:
     depends_on:
       - redis
       - bananadb
+      - es01
     links:
       - bananadb
+      - es01
   redis:
     image: redis
   bananadb:
@@ -20,6 +22,15 @@ services:
       - 27017:27017
     volumes:
       - mongodb:/data/db
+  es01:
+    image: elasticsearch:7.14.2
+    ports:
+      - 9200:9200
+    environment:
+      - discovery.type=single-node
+    volumes:
+      - esdb:/usr/share/elasticsearch/data
 
 volumes:
   mongodb:
+  esdb:
