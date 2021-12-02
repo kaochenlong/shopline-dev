@@ -2,6 +2,7 @@ version: '3'
 
 services:
   shop:
+    container_name: shopline.shop
     build: .
     ports:
       - 3000:3000
@@ -16,14 +17,17 @@ services:
       - es01
   redis:
     image: redis
+    container_name: shopline.redis
   bananadb:
     image: mongo
+    container_name: shopline.mongodb
     ports:
       - 27017:27017
     volumes:
       - mongodb:/data/db
   es01:
     image: elasticsearch:7.14.2
+    container_name: shopline.elasticsearch
     ports:
       - 9200:9200
     environment:
