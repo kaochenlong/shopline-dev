@@ -12,6 +12,7 @@ services:
       - redis
       - bananadb
       - es01
+      - beanstalkd
     links:
       - bananadb
       - es01
@@ -34,6 +35,10 @@ services:
       - discovery.type=single-node
     volumes:
       - esdb:/usr/share/elasticsearch/data
+  beanstalkd:
+    image: schickling/beanstalkd
+    ports:
+     - 11300:11300
 
 volumes:
   mongodb:

@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'mongoid', '~> 7.3', '>= 7.3.3'
 gem 'searchkick', '~> 4.6', '>= 4.6.3'
+gem 'backburner', '~> 1.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
