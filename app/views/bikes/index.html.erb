@@ -1,0 +1,9 @@
+<h1>Youbike資訊</h1>
+<form>
+  <input type="text" name="keyword">
+  <input type="submit" value="查詢">
+</form>
+
+<% @sites.each do |site| %>
+  <li><%= site[:site_name] %> (<%= site[:bike_amount] %>)</li>
+<% end %>
